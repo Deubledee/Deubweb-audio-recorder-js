@@ -142,7 +142,7 @@
     index = 0;
     for (_i = 0, _len = devInfos.length; _i < _len; _i++) {
       info = devInfos[_i];
-      if (info.kind !== 'audioinput') {
+      if (info.deviceId !== 'default' && info.deviceId !== 'communication' && info.kind.match('out') === null) {
         continue;
       }
       name = info.label || ("Audio in " + (++index));
