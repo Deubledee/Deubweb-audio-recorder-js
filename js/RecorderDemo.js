@@ -143,10 +143,9 @@
     for (_i = 0, _len = devInfos.length; _i < _len; _i++) {
       info = devInfos[_i];
       if (info.deviceId !== 'default' && info.deviceId !== 'communication' && info.kind.match('out') === null) {
-        continue;
-      }
-      name = info.label || ("Audio in " + (++index));
+         name = info.kind || ("Audio in " + (++index));
       options += "<option value=" + info.deviceId + ">" + name + "</option>";
+      }     
     }
     $audioInSelect.html(options);
   };
